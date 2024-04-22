@@ -20,8 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     /* CLASSE GLOBAL */
 
     .grid-layout {
-        max-width: 1130px;
+        max-width: 1250px;
         margin: 0 auto;
-        padding: 0 15px;
+        padding: 0 30px;
     }
 `
