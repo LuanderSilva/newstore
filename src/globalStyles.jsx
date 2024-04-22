@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Archivo', sans-serif;
+        background-color: #16161A;
         width: 100%;
     }
 
