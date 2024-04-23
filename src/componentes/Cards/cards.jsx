@@ -1,28 +1,32 @@
-import { ContainerCard } from './styles'
+import { ContentCard, Container } from './styles'
 
-function Cards() {
+function Cards({img, alt, description, price, discount}) {
     return (
-        <ContainerCard>
-            <div className="img-product">
-                <img src="./img-produtos/teclado-t-dagger.png" alt="" />
-            </div>
-            <div className="description-product">
-                <p className='text-description'>Teclado Mecanico T-dagger Bora Preto Switch Brown, T-tgk315-br</p>
-            </div>
-
-            <div className="price-bottom">
-                <div className="price-content">
-                    <span className='text'>à vista</span>
-                    <span className='price'>R$ 165,99</span>
-                    <span className='text-bottom'>no PIX com 15% de desconto</span>
+        <Container>
+            <ContentCard>
+                <div className="img-product">
+                    <img src={img} alt={alt} />
+                </div>
+                <div className="description-product">
+                    <p className='text-description'>{description}</p>
                 </div>
 
-                {/* ICONE DE CORAÇÃO */}
+                <div className="price-bottom">
+                    <div className="price-content">
+                        <span className='text'>à vista</span>
+                        <span className='price'>R$ {price}</span>
+                        <span className='text-bottom'>{discount}</span>
+                    </div>
 
-                <img className="icon-heart" src="./icons/heart.svg" alt="" />
+                    {/* ICONE DE CORAÇÃO */}
 
-            </div>
-        </ContainerCard>
+                    <img className="icon-heart" src="./icons/heart.svg" alt="" />
+
+                </div>
+            </ContentCard>
+
+            <button className="button">Adicionar ao Carrinho</button>
+        </Container>
     )
 }
 
