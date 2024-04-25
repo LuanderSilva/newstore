@@ -71,5 +71,33 @@ export const productsData = [
         description: "Headset Gamer SuperFrame, VELKA, 7.1 Surround, RGB, USB, Black, Drivers de 50mm",
         price: "112,99",
         discount: "6x de $ 22,16 sem juros"
+    },
+    {
+        img: "./img-produtos/mouse-white.jpg",
+        alt: "Mouse gamer white",
+        description: "Mouse Gamer Redragon King Cobra FPS RGB, 24000 DPI, 7 Botões Programáveis, Lunar White",
+        price: "149,90",
+        discount: "8x de R$ 22,04 sem juros"
+    },
+    {
+        img: "./img-produtos/microfone-hyperx.jpg",
+        alt: "Microfone HyperX QuadCast",
+        description: "Microfone HyperX QuadCast, USB, PC, PS4 e MAC, o HyperX QuadCast (modelo HX-MICQC-BK)",
+        price: "759,99",
+        discount: "12x de R$ 74,50 sem juros"
+    },
+    {
+        img: "./img-produtos/mousepad.jpg",
+        alt: "Mousepad Gamer Ninja",
+        description: "Mousepad Gamer Ninja, Control, Grande 800x300mm, Grey, MPGN-GREY-G",
+        price: "19,90",
+        discount: "1x de R$ 22,35 sem juros"
+    },
+    {
+        img: "./img-produtos/gabinete-masterbox.jpg",
+        alt: "Mousepad Gamer Ninja",
+        description: "Gabinete Gamer Cooler Master Masterbox TD300 Mesh, Mid Tower, Vidro Temperado, Black",
+        price: "409,90",
+        discount: "12x de R$ 40,19 sem juros"
     }
 ]
