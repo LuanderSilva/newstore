@@ -11,6 +11,7 @@ export const Container = styled.div`
         color: #FFF;
         letter-spacing: 1px;
         margin-top: 10px;
+        margin-bottom: 20px;
         cursor: pointer;
         transition: .5s;
     }
@@ -25,6 +26,8 @@ export const ContentCard = styled.div`
         border-radius: 5px;
         padding: 20px;
         position: relative;
+        max-width: 300px;
+        height: 450px;
 
     .img-product {
         margin-top: 10px;
