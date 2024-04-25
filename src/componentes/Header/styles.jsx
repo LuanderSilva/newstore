@@ -1,7 +1,15 @@
 import styled from "styled-components"
 
 export const HeaderElement = styled.header`
-    margin-top: 62px;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+    &.scrolled {
+        background-color: #343434;
+    }
 `
 
 export const Container = styled.div`
