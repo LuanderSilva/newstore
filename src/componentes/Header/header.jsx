@@ -1,9 +1,28 @@
 import { HeaderElement, Container, Navigation } from './styles'
+import { useState, useEffect } from 'react';
 
 
 function Header() {
+    const [scrolling, setScrolling] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolling(true)
+            } else {
+                setScrolling(false)
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
-        <HeaderElement>
+        <HeaderElement className={scrolling ? 'scrolled' : ''}>
 
             {/* CONTAINER RECEBE A CLASSE GLOBAL GRID-LAYOUT */}
 
