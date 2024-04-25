@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const HeaderElement = styled.header`
     padding: 30px;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
     position: sticky;
     top: 0;
     z-index: 100;
