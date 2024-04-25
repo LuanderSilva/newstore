@@ -26,7 +26,7 @@ export const ContentCard = styled.div`
         border-radius: 5px;
         padding: 20px;
         position: relative;
-        max-width: 300px;
+        width: 100%;
         height: 450px;
 
     .img-product {
