@@ -24,8 +24,6 @@ function Header() {
     return (
         <HeaderElement className={scrolling ? 'scrolled' : ''}>
 
-            {/* CONTAINER RECEBE A CLASSE GLOBAL GRID-LAYOUT */}
-
             <Container className='grid-layout'>
                 <img className='img-logo' src="./icons/logo.png" alt="Logo" />
                 <input className='input-search' type="search" placeholder='Pesquise o seu produto'/>
