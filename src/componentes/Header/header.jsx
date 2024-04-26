@@ -1,5 +1,6 @@
 import { HeaderElement, Container, Navigation } from './styles'
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -26,7 +27,7 @@ function Header() {
 
             <Container className='grid-layout'>
                 <img className='img-logo' src="./icons/logo.png" alt="Logo" />
-                <input className='input-search' type="search" placeholder='Pesquise o seu produto'/>
+                <input className='input-search' type="search" placeholder='Pesquise o seu produto' />
 
                 <Navigation>
                     <div className='user'>
@@ -41,13 +42,17 @@ function Header() {
 
                     <ul className='menu-icons'>
                         <li className='icons'>
-                            <img src="./icons/heart-fill.svg" alt="" />
-                            <span className='number'>0</span>
+                            <Link to='/Favoritos'>
+                                <img src="./icons/heart-fill.svg" alt="" />
+                                <span className='number'>0</span>
+                            </Link>
                         </li>
 
                         <li className='icons'>
-                            <img src="./icons/cart-fill.svg" alt="" />
-                            <span className='number'>0</span>
+                            <Link to='/Carrinho'>
+                                <img src="./icons/cart-fill.svg" alt="" />
+                                <span className='number'>0</span>
+                            </Link>
                         </li>
                     </ul>
                 </Navigation>
