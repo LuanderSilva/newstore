@@ -85,4 +85,9 @@ export const Navigation = styled.nav`
         border-radius: 50%;
         line-height: 22px;
     }
+
+    .link {
+        text-decoration: none;
+        color: inherit;
+    }
 `
