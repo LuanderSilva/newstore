@@ -42,14 +42,14 @@ function Header() {
 
                     <ul className='menu-icons'>
                         <li className='icons'>
-                            <Link to='/Favoritos'>
+                            <Link to='/Favoritos' className='link'>
                                 <img src="./icons/heart-fill.svg" alt="" />
                                 <span className='number'>0</span>
                             </Link>
                         </li>
 
                         <li className='icons'>
-                            <Link to='/Carrinho'>
+                            <Link to='/Carrinho' className='link'>
                                 <img src="./icons/cart-fill.svg" alt="" />
                                 <span className='number'>0</span>
                             </Link>
