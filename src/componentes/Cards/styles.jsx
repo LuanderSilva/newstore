@@ -1,32 +1,11 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
-    .button {
-        width: 100%;
-        padding: 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #7F5AF0;
-        font-family: 'Archivo', sans-serif;
-        color: #FFF;
-        letter-spacing: 1px;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        cursor: pointer;
-        transition: .5s;
-    }
-
-    .button:hover {
-        background-color: #8e6cf7;
-    }
-`
-
 export const ContentCard = styled.div`
         background-color: #fff;
         border-radius: 5px;
         padding: 20px;
         position: relative;
-        width: 100%;
+        max-width: 350px;
         height: 450px;
 
     .img-product {
@@ -81,4 +60,39 @@ export const ContentCard = styled.div`
         margin-top: 55px;
         cursor: pointer;
     }
+
+    /* MEDIAS */
+
+   @media screen and (max-width: 847px) {
+        max-width: 100%;
+   }
+`
+
+export const ButtonCarrinho = styled.div`
+    max-width: 350px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    .button {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Archivo', sans-serif;
+        background-color: #7F5AF0;
+        color: #FFF;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .button:hover {
+        background-color: #8e6cf7;
+    }
+
+    /* MEDIAS */
+    
+    @media screen and (max-width: 847px) {
+        max-width: 100%;
+   }
 `
