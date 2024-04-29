@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Section = styled.section`
-    margin-top: 100px;
+    margin-top: 50px;
 
     .s1-title {
         color: #fff;
@@ -16,15 +16,19 @@ export const Section = styled.section`
     }
 
     .slick-next {
-       width: 25px;
+       margin: 0px 10px;
+    }
+
+    .slick-prev {
+        margin: 0 15px;
     }
 
     .slick-prev:before {
-        font-size: 36px;
-        margin-left: -20px;
+        font-size: 25px;
+        margin-left: -30px;
     }
 
     .slick-next:before {
-        font-size: 36px;
+        font-size: 25px;
     }
 `
