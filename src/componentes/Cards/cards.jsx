@@ -1,8 +1,8 @@
-import { ContentCard, Container } from './styles'
+import { ContentCard, ButtonCarrinho } from './styles'
 
-function Cards({img, alt, description, price, discount}) {
+function Cards({ img, alt, description, price, discount }) {
     return (
-        <Container>
+        <div>
             <ContentCard>
                 <div className="img-product">
                     <img src={img} alt={alt} />
@@ -25,8 +25,10 @@ function Cards({img, alt, description, price, discount}) {
                 </div>
             </ContentCard>
 
-            <button className="button">Adicionar ao Carrinho</button>
-        </Container>
+            <ButtonCarrinho>
+                <button className="button">Adicionar ao Carrinho</button>
+            </ButtonCarrinho>
+        </div>
     )
 }
 
