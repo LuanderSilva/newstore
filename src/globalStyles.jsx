@@ -12,6 +12,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        position: relative;
         font-family: 'Archivo', sans-serif;
         background-color: #16161A;
         width: 100%;
