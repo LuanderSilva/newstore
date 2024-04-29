@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { Menu, Container, ContentCarrinho, Produtos, ContainerFooter } from './styles'
 import Header from '../../componentes/Header/header'
 import Footer from '../../componentes/Rodape/rodape'
-import Card from '../../componentes/Cards/cards'
 import { Link } from "react-router-dom"
 
 function Carrinho({ title }) {
