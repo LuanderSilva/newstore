@@ -31,7 +31,7 @@ function Header() {
 
                 <Navigation>
                     <div className='user'>
-                        <img src="./icons/user-circle-fill.svg" alt="" />
+                        <img src="./icons/user-circle-fill.svg" alt="ícone de usuário" />
                         <div className='user-text'>
                             <span>Minha conta</span>
                             <span>Entrar / Cadastro</span>
@@ -43,14 +43,14 @@ function Header() {
                     <ul className='menu-icons'>
                         <li className='icons'>
                             <Link to='/Favoritos' className='link'>
-                                <img src="./icons/heart-fill.svg" alt="" />
+                                <img src="./icons/heart-fill.svg" alt="Ir para a página de favoritos" />
                                 <span className='number'>0</span>
                             </Link>
                         </li>
 
                         <li className='icons'>
                             <Link to='/Carrinho' className='link'>
-                                <img src="./icons/cart-fill.svg" alt="" />
+                                <img src="./icons/cart-fill.svg" alt="Ir para a página de carrinho" />
                                 <span className='number'>0</span>
                             </Link>
                         </li>
