@@ -33,10 +33,12 @@ export const ContentCarrinho = styled.div`
 `
 
 export const Produtos = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    margin-top: 60px;
-    grid-gap: 10px;
+    .list-produtos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin-top: 60px;
+        grid-gap: 10px;
+    }
     
 
     .span-title {
