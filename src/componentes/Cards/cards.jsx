@@ -1,6 +1,30 @@
-import { ContentCard, ButtonCarrinho } from './styles'
+import React from 'react';
+import { ContentCard, ButtonCarrinho } from './styles';
+import { useCartFavoritesContext } from '../../hooks/useCartFavoritesContext';
 
 function Cards({ img, alt, description, price, discount }) {
+    const { addToCart, addToFavorites } = useCartFavoritesContext();
+
+    const handleAddToCart = () => {
+        addToCart({
+            img,
+            alt,
+            description,
+            price,
+            discount
+        });
+    };
+
+    const handleAddToFavorites = () => {
+        addToFavorites({
+            img,
+            alt,
+            description,
+            price,
+            discount
+        });
+    };
+
     return (
         <div>
             <ContentCard>
@@ -18,18 +42,15 @@ function Cards({ img, alt, description, price, discount }) {
                         <span className='text-bottom'>{discount}</span>
                     </div>
 
-                    {/* ICONE DE CORAÇÃO */}
-
-                    <img className="icon-heart" src="./icons/heart.svg" alt="" />
-
+                    <img className="icon-heart" src="./icons/heart.svg" alt="Adicionar aos Favoritos" onClick={handleAddToFavorites}/>
                 </div>
             </ContentCard>
 
             <ButtonCarrinho>
-                <button className="button">Adicionar ao Carrinho</button>
+                <button className="button" onClick={handleAddToCart}>Adicionar ao Carrinho</button>
             </ButtonCarrinho>
         </div>
-    )
+    );
 }
 
 export default Cards;
