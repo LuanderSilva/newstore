@@ -1,10 +1,13 @@
 import { useEffect } from "react"
 import { Menu, Container, ContentCarrinho, Produtos, ContainerFooter } from './styles'
+import { Link } from "react-router-dom"
+import { useCartFavoritesContext } from "../../hooks/useCartFavoritesContext"
 import Header from '../../componentes/Header/header'
 import Footer from '../../componentes/Rodape/rodape'
-import { Link } from "react-router-dom"
+import Cards from '../../componentes/Cards/cards'
 
 function Carrinho({ title }) {
+    const { cartItems } = useCartFavoritesContext()
 
     // Titulo da página
 
@@ -34,7 +37,23 @@ function Carrinho({ title }) {
                             <h1 className="titleh1">Meu carrinho</h1>
 
                             <Produtos>
-                                <span className="span-title">Nenhum produto no seu carrinho.</span>
+                                {cartItems.length === 0 ? (
+                                    <span className="span-title">Nenhum produto no seu carrinho.</span>
+                                ) : (
+                                    <ul className="list-produtos">
+                                        {cartItems.map((item, index) => (
+                                            <li key={index}>
+                                                <Cards
+                                                    img={item.img}
+                                                    alt={item.alt}
+                                                    description={item.description}
+                                                    price={item.price}
+                                                    discount={item.discount}
+                                                />
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </Produtos>
                         </ContentCarrinho>
                     </Container>
