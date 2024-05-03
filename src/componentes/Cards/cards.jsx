@@ -1,9 +1,17 @@
-import React from 'react';
-import { ContentCard, ButtonCarrinho } from './styles';
+import { ContentCard, ButtonCarrinho, ContentTop } from './styles';
 import { useCartFavoritesContext } from '../../hooks/useCartFavoritesContext';
 
-function Cards({ img, alt, description, price, discount }) {
-    const { addToCart, addToFavorites } = useCartFavoritesContext();
+function Cards({
+    img,
+    alt,
+    description,
+    price,
+    discount,
+    isInCartPage,
+    cartPageButton = true,
+    quantity
+}) {
+    const { addToCart, addToFavorites, removeFromCart } = useCartFavoritesContext()
 
     const handleAddToCart = () => {
         addToCart({
@@ -11,9 +19,18 @@ function Cards({ img, alt, description, price, discount }) {
             alt,
             description,
             price,
-            discount
+            discount,
+            quantity: quantity + 1
         });
     };
+
+    const handleRemoveOneFromCart = () => {
+        removeFromCart(alt);
+    };
+
+    const handleRemoveAllFromCart = () => {
+        removeFromCart(alt, true);
+    }
 
     const handleAddToFavorites = () => {
         addToFavorites({
@@ -28,9 +45,26 @@ function Cards({ img, alt, description, price, discount }) {
     return (
         <div>
             <ContentCard>
-                <div className="img-product">
-                    <img src={img} alt={alt} />
-                </div>
+                <ContentTop>
+                    <img className='img-product' src={img} alt={alt} />
+                    {isInCartPage && (
+                        <>
+                            <div className="quantidade">
+                                <p>Quantidade</p>
+                                <div className="buttons-quant">
+                                    <button className='menos-quant' onClick={quantity > 1 ? handleRemoveOneFromCart : handleRemoveAllFromCart}>-</button>
+                                    <input className='input-quant' type="text" min="1" value={quantity} disabled />
+                                    <button className='mais-quant' onClick={handleAddToCart}>+</button>
+                                </div>
+                            </div>
+
+                            <div className="delete">
+                                <img src="./icons/icon-x.svg" alt="" onClick={handleRemoveAllFromCart} />
+                            </div>
+                        </>
+                    )}
+                </ContentTop>
+
                 <div className="description-product">
                     <p className='text-description'>{description}</p>
                 </div>
@@ -42,15 +76,17 @@ function Cards({ img, alt, description, price, discount }) {
                         <span className='text-bottom'>{discount}</span>
                     </div>
 
-                    <img className="icon-heart" src="./icons/heart.svg" alt="Adicionar aos Favoritos" onClick={handleAddToFavorites}/>
+                    <img className="icon-heart" src="./icons/heart.svg" alt="Adicionar aos Favoritos" onClick={handleAddToFavorites} />
                 </div>
-            </ContentCard>
+            </ContentCard >
 
-            <ButtonCarrinho>
-                <button className="button" onClick={handleAddToCart}>Adicionar ao Carrinho</button>
-            </ButtonCarrinho>
-        </div>
+            {cartPageButton && (
+                <ButtonCarrinho>
+                    <button className="button" onClick={handleAddToCart}>Adicionar ao Carrinho</button>
+                </ButtonCarrinho>
+            )}
+        </div >
     );
 }
 
-export default Cards;
+export default Cards
