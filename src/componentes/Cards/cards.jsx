@@ -1,5 +1,6 @@
 import { ContentCard, ButtonCarrinho, ContentTop } from './styles';
 import { useCartFavoritesContext } from '../../hooks/useCartFavoritesContext';
+import { useState, useEffect } from 'react';
 
 function Cards({
     img,
@@ -11,8 +12,10 @@ function Cards({
     cartPageButton = true,
     quantity
 }) {
-    const { addToCart, addToFavorites, removeFromCart } = useCartFavoritesContext()
+    const { addToCart, addToFavorites, removeFromCart, removeFromFavorites, favoriteItems } = useCartFavoritesContext()
+    const [isFavorite, setIsFavorite] = useState(false)
 
+    
     const handleAddToCart = () => {
         addToCart({
             img,
@@ -32,14 +35,25 @@ function Cards({
         removeFromCart(alt, true);
     }
 
+    useEffect(() => {
+        const isAlreadyFavorite = favoriteItems.some(item => item.alt === alt);
+        setIsFavorite(isAlreadyFavorite);
+    }, [favoriteItems, alt]);
+
     const handleAddToFavorites = () => {
-        addToFavorites({
-            img,
-            alt,
-            description,
-            price,
-            discount
-        });
+        if (isFavorite) {
+            removeFromFavorites(alt);
+            setIsFavorite(false);
+        } else {
+            addToFavorites({
+                img,
+                alt,
+                description,
+                price,
+                discount
+            });
+            setIsFavorite(true);
+        }
     };
 
     return (
@@ -76,7 +90,12 @@ function Cards({
                         <span className='text-bottom'>{discount}</span>
                     </div>
 
-                    <img className="icon-heart" src="./icons/heart.svg" alt="Adicionar aos Favoritos" onClick={handleAddToFavorites} />
+                    <img
+                        className="icon-heart"
+                        src={isFavorite ? "./icons/heart-fill.svg" : "./icons/heart.svg"}
+                        alt="Adicionar aos Favoritos"
+                        onClick={handleAddToFavorites}
+                    />
                 </div>
             </ContentCard >
 
