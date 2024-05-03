@@ -64,13 +64,13 @@ export const Navigation = styled.nav`
 
     .menu-icons {
         display: flex;
+        gap: 25px;
         align-items: center;
         list-style: none;
     }
 
     .icons {
         position: relative;
-        margin-right: 20px;
         cursor: pointer;
     }
 
