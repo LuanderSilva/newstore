@@ -46,6 +46,12 @@ export const CartFavoritesProvider = ({ children }) => {
         setFavoritesCount(prevCount => prevCount + 1)
     }
 
+    const removeFromFavorites = (productAlt) => {
+        const updatedFavoriteItems = favoriteItems.filter(item => item.alt !== productAlt);
+        setFavoriteItems(updatedFavoriteItems);
+        setFavoritesCount(prevCount => prevCount - 1);
+    };
+
     return (
         <CartFavoritesContext.Provider 
             value={{ 
@@ -55,7 +61,8 @@ export const CartFavoritesProvider = ({ children }) => {
                 favoriteItems,
                 addToCart, 
                 removeFromCart,
-                addToFavorites 
+                addToFavorites,
+                removeFromFavorites
             }}>
             {children}
         </CartFavoritesContext.Provider>
