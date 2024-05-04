@@ -13,6 +13,29 @@ function SectionCarrossel() {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1007,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 830,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
 
     return (
