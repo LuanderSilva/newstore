@@ -10,6 +10,13 @@ export const Section = styled.section`
         font-size: 2rem;
         letter-spacing: 1px;
     }
+
+    @media screen and (max-width: 830px) {
+        .s1-title {
+            text-align: center;
+            font-size: 1.7rem;
+        }
+    }
 `
 
 export const ContentCards = styled.div`
