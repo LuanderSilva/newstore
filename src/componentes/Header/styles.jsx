@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 export const HeaderElement = styled.header`
     padding: 30px 0;
-    transition: 0.1s ease;
-    position: sticky;
-    top: 0;
+    transition: 0.2s ease;
+    position: fixed;
+    width: 100%;
     z-index: 100;
     
     &.scrolled {
