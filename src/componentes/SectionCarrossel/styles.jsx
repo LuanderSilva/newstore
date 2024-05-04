@@ -12,11 +12,11 @@ export const Section = styled.section`
     }
 
      .slick-slide {
-        padding-right: 10px;
+        padding: 0 5px;
     }
 
     .slick-next {
-       margin: 0px 10px;
+       margin: 0px 5px;
     }
 
     .slick-prev {
@@ -30,5 +30,14 @@ export const Section = styled.section`
 
     .slick-next:before {
         font-size: 25px;
+    }
+
+    // media
+
+    @media screen and (max-width: 830px) {
+        .s1-title {
+            text-align: center;
+            font-size: 1.7rem;
+        }
     }
 `
