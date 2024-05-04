@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-    margin-top: 80px;
+    margin-top: 75px;
 
     .s1-title {
         color: #fff;
