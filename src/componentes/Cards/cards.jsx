@@ -1,6 +1,7 @@
 import { ContentCard, ButtonCarrinho, ContentTop } from './styles';
 import { useCartFavoritesContext } from '../../hooks/useCartFavoritesContext';
 import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 function Cards({
     img,
@@ -25,14 +26,35 @@ function Cards({
             discount,
             quantity: quantity + 1
         });
-    };
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Adicionado com sucesso!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }
 
     const handleRemoveOneFromCart = () => {
         removeFromCart(alt);
     };
 
     const handleRemoveAllFromCart = () => {
-        removeFromCart(alt, true);
+        Swal.fire({
+            title: "Tem certeza?",
+            text: "Você está deletando este produto do carrinho!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            cancelButtonText: "Cancelar",
+            confirmButtonText: "Sim, tenho!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                removeFromCart(alt, true);
+            }
+          });
     }
 
     useEffect(() => {
