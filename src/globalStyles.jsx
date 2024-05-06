@@ -21,6 +21,10 @@ export const GlobalStyle = createGlobalStyle`
         width: 100%;
     }
 
+    .no-scroll {
+        overflow: hidden;
+    }
+
     /* CLASSE GLOBAL */
 
     .grid-layout {
