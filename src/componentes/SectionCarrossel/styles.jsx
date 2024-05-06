@@ -40,4 +40,8 @@ export const Section = styled.section`
             font-size: 1.7rem;
         }
     }
+
+    @media screen and (max-width: 720px){
+        margin-top: 200px;
+    }
 `
