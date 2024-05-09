@@ -54,6 +54,14 @@ export const Produtos = styled.div`
     .span-title {
         color: #FFF;
     }
+
+    @media screen and (max-width: 650px) {
+        flex-direction: column-reverse;
+
+        .list-produtos {
+            margin: 0;
+        }
+    }
 `
 
 export const FinalizarPedido = styled.div`
@@ -100,6 +108,15 @@ export const FinalizarPedido = styled.div`
         font-family: 'Archivo', sans-serif;
         letter-spacing: 1px;
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 650px) {
+        margin: 0;
+
+        .card-finalizar {
+            width: 100%;
+        }
+        
     }
 `
 
